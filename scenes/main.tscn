@@ -1,0 +1,213 @@
+[gd_scene format=3 uid="uid://dff2qerboyywc"]
+
+[ext_resource type="Script" uid="uid://bjerxxy7ixc84" path="res://scenes/main.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://pi0l8btk6wub" path="res://scenes/ui.gd" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://b58x0n1lg8eev" path="res://scenes/note_maker.gd" id="3_tefeu"]
+[ext_resource type="AudioStream" uid="uid://bfiy7q6u5uhcd" path="res://assets/Saint Paul - That 90s Feelin' - EELF.wav" id="4_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://c5mmc04isp434" path="res://assets/meekworld.PNG" id="5_tbgi4"]
+[ext_resource type="Script" uid="uid://cpxd0rrotnfr6" path="res://scenes/audio_stream_player_2d.gd" id="5_tefeu"]
+
+[sub_resource type="Animation" id="Animation_tefeu"]
+resource_name = "that 90's feelin"
+length = 278.0
+step = 0.48
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.4, 6.2400002, 9.6, 10.56, 13.44, 14.4, 17.28, 17.76, 18.24, 20.64, 21.119999, 21.599998, 22.56, 24.48, 26.4, 28.32, 28.8, 29.279999, 30.72, 31.68, 32.64, 33.6, 34.56, 35.52, 38.4, 38.88, 40.32, 40.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [0, Vector2(40, 80)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(20, 20)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(20, 40)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(40, 80)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(40, 60)],
+"method": &"_add_group"
+}, {
+"args": [4, Vector2(20, 40)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(60, 70)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(60, 50)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(60, 30)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(20, 70)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(20, 50)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(20, 30)],
+"method": &"_add_group"
+}, {
+"args": [1, Vector2(75, 70)],
+"method": &"_add_group"
+}, {
+"args": [3, Vector2(20, 20)],
+"method": &"_add_group"
+}, {
+"args": [2, Vector2(60, 60)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(30, 30)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(30, 50)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(30, 70)],
+"method": &"_add_group"
+}, {
+"args": [1, Vector2(20, 70)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(40, 80)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(20, 20)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(40, 50)],
+"method": &"_add_group"
+}, {
+"args": [5, Vector2(30, 80)],
+"method": &"_add_group"
+}, {
+"args": [4, Vector2(30, 30)],
+"method": &"_add_group"
+}, {
+"args": [3, Vector2(20, 30)],
+"method": &"_add_group"
+}, {
+"args": [2, Vector2(60, 70)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(40, 60)],
+"method": &"_add_group"
+}, {
+"args": [0, Vector2(20, 40)],
+"method": &"_add_group"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o6xl0"]
+_data = {
+&"that 90\'s feelin": SubResource("Animation_tefeu")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_sgp6g"]
+font_size = 64
+
+[sub_resource type="Animation" id="Animation_jyhfs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MarginContainer/rating_label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sugp2"]
+resource_name = "update_rating"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/MarginContainer/rating_label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(2.1435475, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jyhfs"]
+_data = {
+&"RESET": SubResource("Animation_jyhfs"),
+&"update_rating": SubResource("Animation_sugp2")
+}
+
+[node name="main" type="Node2D" unique_id=635752093]
+script = ExtResource("1_0wfyh")
+
+[node name="note_area" type="Node2D" parent="." unique_id=121715461]
+
+[node name="grouping_positioner" type="Node2D" parent="." unique_id=1155303027]
+
+[node name="note_maker" type="Node2D" parent="." unique_id=1853385169 node_paths=PackedStringArray("note_area")]
+script = ExtResource("3_tefeu")
+note_area = NodePath("../note_area")
+
+[node name="conductor" type="AnimationPlayer" parent="note_maker" unique_id=842987069]
+libraries/ = SubResource("AnimationLibrary_o6xl0")
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=1490530999]
+script = ExtResource("2_sugp2")
+
+[node name="Control" type="Control" parent="ui" unique_id=1532379901]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ui/Control" unique_id=1802878692]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -103.0
+offset_bottom = 88.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+
+[node name="rating_label" type="Label" parent="ui/Control/MarginContainer" unique_id=517529420]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+text = "n/a"
+label_settings = SubResource("LabelSettings_sgp6g")
+
+[node name="rating_animator" type="AnimationPlayer" parent="ui" unique_id=857259075]
+libraries/ = SubResource("AnimationLibrary_jyhfs")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=682278054]
+stream = ExtResource("4_jyhfs")
+volume_db = -4.0
+stream_paused = true
+script = ExtResource("5_tefeu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=270263630]
+modulate = Color(0.70380783, 0.70380783, 0.70380783, 1)
+z_index = -2
+position = Vector2(573, 323)
+scale = Vector2(1.8135861, 1.1314878)
+texture = ExtResource("5_tbgi4")
