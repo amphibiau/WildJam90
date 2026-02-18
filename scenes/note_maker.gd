@@ -27,8 +27,7 @@ const NOTE_GROUP_CURVE_DOWN = preload("uid://brewv3vxx0xpu")
 # for ex, current song is 125 bpm so snapping is set to 0.48
 
 func _ready():
-	conductor.play("that 90's feelin")
-	conductor.pause()
+	conductor.play("that 90's feelin"); conductor.pause()
 	conductor.advance(Gamestate.debug_start_time)
 	conductor.play()
 
@@ -45,7 +44,6 @@ func _fetch_canvas_pos_by_percent(percent : Vector2):
 
 func fetch_group(group_name : Enums.Groups):
 	var group_tscn = null
-	print(group_name)
 	match group_name:
 		Enums.Groups.HORIZONTAL: group_tscn = NOTE_GROUP_HORIZONTAL
 		Enums.Groups.VERTICAL: group_tscn = NOTE_GROUP_VERTICAL

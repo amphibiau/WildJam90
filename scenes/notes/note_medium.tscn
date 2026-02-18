@@ -5,6 +5,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_w7eif"]
 radius = 22.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_66ngb"]
+radius = 30.0
+
 [sub_resource type="SphereMesh" id="SphereMesh_66ngb"]
 radius = 20.0
 height = 40.0
@@ -106,7 +109,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/7/path = NodePath("area_hit_collider/CollisionShape2D:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -224,7 +227,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/0/path = NodePath("area_hit_collider/CollisionShape2D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -300,7 +303,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/2/path = NodePath("area_hit_collider/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -348,11 +351,24 @@ _data = {
 scale = Vector2(1.6, 1.6)
 script = ExtResource("1_66ngb")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1556294286]
+[node name="area_hit_collider" type="Area2D" parent="." unique_id=1556294286]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1577028608]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_hit_collider" unique_id=1577028608]
 shape = SubResource("CircleShape2D_w7eif")
 disabled = true
+
+[node name="area_miss_collider" type="Area2D" parent="." unique_id=1354815213]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area_miss_collider" unique_id=661419031]
+shape = SubResource("CircleShape2D_66ngb")
+
+[node name="mesh_debug_miss_collider" type="MeshInstance2D" parent="area_miss_collider" unique_id=1002781170]
+visible = false
+modulate = Color(0.67058825, 0.23529412, 0, 0.1882353)
+z_index = 1
+position = Vector2(-2.8610225e-06, 0.31249994)
+scale = Vector2(1.5017006, 1.5156249)
+mesh = SubResource("SphereMesh_66ngb")
 
 [node name="mesh" type="MeshInstance2D" parent="." unique_id=2056995815]
 visible = false
@@ -379,6 +395,7 @@ libraries/ = SubResource("AnimationLibrary_xjeh5")
 [node name="existence_timer" type="Timer" parent="." unique_id=859043313]
 one_shot = true
 
-[connection signal="mouse_shape_entered" from="Area2D" to="." method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_entered" from="area_hit_collider" to="." method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="area_miss_collider" to="." method="_on_area_miss_collider_mouse_shape_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="existence_timer" to="." method="_on_existence_timer_timeout"]

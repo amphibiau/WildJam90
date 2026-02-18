@@ -202,7 +202,6 @@ libraries/ = SubResource("AnimationLibrary_jyhfs")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=682278054]
 stream = ExtResource("4_jyhfs")
 volume_db = -4.0
-stream_paused = true
 script = ExtResource("5_tefeu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=270263630]

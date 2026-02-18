@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="fruiting my ninja"
+config/name="hyla the star mapper"
 run/main_scene="uid://dff2qerboyywc"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
