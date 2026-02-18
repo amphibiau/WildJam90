@@ -155,21 +155,30 @@ _data = {
 [node name="main" type="Node2D" unique_id=635752093]
 script = ExtResource("1_0wfyh")
 
-[node name="note_area" type="Node2D" parent="." unique_id=121715461]
+[node name="root_2d" type="Node2D" parent="." unique_id=1725862042]
 
-[node name="grouping_positioner" type="Node2D" parent="." unique_id=1155303027]
+[node name="note_area" type="Node2D" parent="root_2d" unique_id=121715461]
 
-[node name="note_maker" type="Node2D" parent="." unique_id=1853385169 node_paths=PackedStringArray("note_area")]
+[node name="grouping_positioner" type="Node2D" parent="root_2d" unique_id=1155303027]
+
+[node name="note_maker" type="Node2D" parent="root_2d" unique_id=1853385169 node_paths=PackedStringArray("note_area")]
 script = ExtResource("3_tefeu")
 note_area = NodePath("../note_area")
 
-[node name="conductor" type="AnimationPlayer" parent="note_maker" unique_id=842987069]
+[node name="conductor" type="AnimationPlayer" parent="root_2d/note_maker" unique_id=842987069]
 libraries/ = SubResource("AnimationLibrary_o6xl0")
 
-[node name="ui" type="CanvasLayer" parent="." unique_id=1490530999]
+[node name="background" type="Sprite2D" parent="root_2d" unique_id=270263630]
+modulate = Color(0.70380783, 0.70380783, 0.70380783, 1)
+z_index = -2
+position = Vector2(573, 323)
+scale = Vector2(1.8135861, 1.1314878)
+texture = ExtResource("5_tbgi4")
+
+[node name="ui" type="CanvasLayer" parent="root_2d" unique_id=1490530999]
 script = ExtResource("2_sugp2")
 
-[node name="Control" type="Control" parent="ui" unique_id=1532379901]
+[node name="Control" type="Control" parent="root_2d/ui" unique_id=1532379901]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -178,7 +187,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ui/Control" unique_id=1802878692]
+[node name="MarginContainer" type="MarginContainer" parent="root_2d/ui/Control" unique_id=1802878692]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -190,23 +199,18 @@ mouse_filter = 2
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 16
 
-[node name="rating_label" type="Label" parent="ui/Control/MarginContainer" unique_id=517529420]
+[node name="rating_label" type="Label" parent="root_2d/ui/Control/MarginContainer" unique_id=517529420]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 text = "n/a"
 label_settings = SubResource("LabelSettings_sgp6g")
 
-[node name="rating_animator" type="AnimationPlayer" parent="ui" unique_id=857259075]
+[node name="rating_animator" type="AnimationPlayer" parent="root_2d/ui" unique_id=857259075]
 libraries/ = SubResource("AnimationLibrary_jyhfs")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=682278054]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="root_2d" unique_id=682278054]
 stream = ExtResource("4_jyhfs")
 volume_db = -4.0
 script = ExtResource("5_tefeu")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=270263630]
-modulate = Color(0.70380783, 0.70380783, 0.70380783, 1)
-z_index = -2
-position = Vector2(573, 323)
-scale = Vector2(1.8135861, 1.1314878)
-texture = ExtResource("5_tbgi4")
+[node name="root_menu" type="CanvasLayer" parent="." unique_id=521983113]

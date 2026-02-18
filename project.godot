@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Gamestate="*uid://bjs75bujddsv1"
+Gamestate="*uid://cv7s1dwsycv3c"
 Events="*uid://cx20otxa87gdr"
 Enums="*uid://c1rbw8j0mwig1"
 

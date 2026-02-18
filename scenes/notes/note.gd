@@ -19,6 +19,7 @@ func _on_area_2d_mouse_shape_entered(shape_idx: int) -> void:
 	animation_player.play("hit")
 	
 	hit.emit()
+	Events.note_hit.emit()
 
 func start_existence():
 	existence_timer.wait_time = Gamestate.beat_length * Gamestate.note_existence_length
